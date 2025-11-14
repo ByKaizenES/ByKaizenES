@@ -58,7 +58,7 @@
 }
 .feature-card.about .image {
     height: 150px;
-    background: linear-gradient(135deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35)), url('punk.png');
+    background: linear-gradient(135deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35)), url('images/punk.png');
     background-size: cover;
     background-position: center;
     border-bottom: 2px solid rgba(255,45,149,0.35);
@@ -1148,6 +1148,52 @@ body {
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
+    /* En móvil: desactivar drag, organizar en columna vertical */
+    #main-board {
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 20px 10px;
+    }
+
+    .draggable-item {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        margin: 15px auto;
+        transform: none !important;
+        cursor: pointer;
+        display: block;
+        width: fit-content;
+        max-width: 90%;
+    }
+
+    /* Tarjetas clicables prioritarias primero */
+    .draggable-item.clickable {
+        order: -1;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    /* Ocultar elementos decorativos menos importantes en móvil */
+    .safety-pin,
+    .torn-poster,
+    .background-texture,
+    .spray-tag,
+    .graffiti,
+    .symbol-deco.peace,
+    .skull-deco.small,
+    .sticker.star-shape,
+    .sticker.anarchy {
+        display: none !important;
+    }
+
+    /* Ajustar tamaños de componentes */
+    .feature-card,
+    .terminal-card {
+        width: 100%;
+        max-width: none;
+    }
+
     .sticky-note { width: 150px; height: 150px; }
     .sticky-note h2 { font-size: 24px; }
     .polaroid { width: 140px; }
@@ -1163,5 +1209,33 @@ body {
     .graffiti p { font-size: 18px; }
     .tape-piece { width: 100px; height: 30px; }
     .tape-piece.vertical { width: 30px; height: 100px; }
-}
 
+    /* Logo más pequeño */
+    .site-logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .site-logo {
+        top: 10px;
+        left: 10px;
+    }
+
+    /* Reorganizar flujo vertical */
+    #main-board {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .neon-sign {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .cyber-sticker,
+    .backstage-pass {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}

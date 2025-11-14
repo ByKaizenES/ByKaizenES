@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>// DEVELOPER CHAOS //</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- PANTALLA DE CARGA -->
+    <div id="loading-screen">
+        <video id="loading-video" autoplay muted>
+            <source src="video_1762995318526.webm" type="video/webm">
+        </video>
+    </div>
+
+    <!-- PANTALLA PRINCIPAL - TABLERO PUNK -->
+    <div id="main-board" class="hidden">
+        <div class="background-texture"></div>
+        <!-- Póster central para anclar la composición -->
+        <div class="torn-poster"></div>
+        
+        <!-- LOGO DEL SITIO -->
+        <a href="index.html" class="site-logo" aria-label="Inicio">
+            <img src="icon.png" alt="Logo" />
+        </a>
+        
+        <!-- ELEMENTOS CLICABLES (llevan a páginas) -->
+        <div class="draggable-item clickable" data-page="projects.html" style="left: 12%; top: 18%;">
+            <div class="feature-card projects">
+                <div class="tab">// PROJECTS</div>
+                <h2>NEW PROJECTS</h2>
+                <p>Últimos experimentos, builds y caos controlado.</p>
+            </div>
+        </div>
+
+        <div class="draggable-item clickable" data-page="about.html" style="left: 60%; top: 12%;">
+            <div class="feature-card about">
+                <div class="image"></div>
+                <div class="ribbon">2025</div>
+                <h2>ABOUT ME</h2>
+                <p>Bio corta, manías de dev y cosas que no vienen en el CV.</p>
+            </div>
+        </div>
+
+        <div class="draggable-item clickable" data-page="contact.html" style="left: 78%; top: 46%;">
+            <div class="feature-card contact">
+                <h2>CONTACT</h2>
+                <p>// Email, redes y señales de humo</p>
+            </div>
+        </div>
+
+        <div class="draggable-item clickable" data-page="work.html" style="left: 40%; top: 56%;">
+            <div class="feature-card work">
+                <div class="ring"></div>
+                <h2>MY WORK</h2>
+                <p>Selección de proyectos con mimo y bugs felices.</p>
+            </div>
+        </div>
+
+        <div class="draggable-item clickable" data-page="skills.html" style="left: 24%; top: 72%;">
+            <div class="terminal-card">
+                <div class="bar">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="title">skills.sh</span>
+                </div>
+                <div class="content">
+                    <p>$ stack: js, ts, py, rust</p>
+                    <p>$ frameworks: react, svelte, node</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- POLAROIDS DECORATIVAS -->
+        <div class="draggable-item" style="left: 5%; top: 8%;">
+            <div class="polaroid small">
+                <div class="polaroid-img">
+                    <img src="images/superpunk.png" alt="Punk Rock">
+                </div>
+                <p class="handwritten small">PUNK<br>ROCK</p>
+                <div class="pushpin top-right yellow"></div>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 88%; top: 12%;">
+            <div class="polaroid small">
+                <div class="polaroid-img">
+                    <img src="images/super.png" alt="Energy">
+                </div>
+                <p class="handwritten small">ENERGY</p>
+                <div class="pushpin top-left red"></div>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 72%; top: 78%;">
+            <div class="polaroid">
+                <div class="polaroid-img">
+                    <img src="images/super_superpunk.png" alt="Hot Code">
+                </div>
+                <p class="handwritten">HOT<br>CODE</p>
+                <div class="pushpin top-center blue"></div>
+            </div>
+        </div>
+
+        <!-- RECORTES DE PERIÓDICO -->
+        <div class="draggable-item" style="left: 8%; top: 52%;">
+            <div class="newspaper-clip">
+                <h4>DESARROLLADOR<br>A LA VISTA</h4>
+                <p class="news-text">Última hora: dev local provoca caos creativo (a propósito)...</p>
+                <div class="clip-top"></div>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 52%; top: 5%;">
+            <div class="newspaper-clip small">
+                <h4>REBELS DEL CÓDIGO</h4>
+                <p class="news-text">La resistencia compila. A veces a la primera.</p>
+                <div class="binder-clip"></div>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 82%; top: 82%;">
+            <div class="newspaper-clip">
+                <h4>REVOLUCIÓN TECH</h4>
+                <p class="news-text">Framework nuevo: devs en pánico, memes en auge...</p>
+                <div class="clip-top yellow"></div>
+            </div>
+        </div>
+
+        <!-- PEGATINAS VARIADAS -->
+        <div class="draggable-item" style="left: 5%; top: 60%;">
+            <div class="sticker anarchy">
+                <span class="anarchy-symbol">Ⓐ</span>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 84%; top: 24%;">
+            <div class="cyber-sticker pink">
+                <p>AHORA NO,<br>ESTOY CREANDO</p>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 35%; top: 12%;">
+            <div class="sticker hexagon">
+                <span class="sticker-text">DEV</span>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 92%; top: 45%;">
+            <div class="symbol-deco peace">☮</div>
+        </div>
+
+        <div class="draggable-item" style="left: 3%; top: 30%;">
+            <div class="sticker square green">
+                <p>HACK<br>THE<br>PLANET</p>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 47%; top: 87%;">
+            <div class="cyber-sticker yellow">
+                <p>COMMIT > DORMIR</p>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 15%; top: 45%;">
+            <div class="sticker star-shape">
+                <span>★</span>
+            </div>
+        </div>
+
+        <!-- ANOTACIONES Y NOTAS -->
+        <div class="draggable-item" style="left: 30%; top: 35%;">
+            <div class="note-scribble">
+                <p>// NOTAS:<br>ARREGLAR BUGS<br>ESCRIBIR DOCS<br><span class="crossed">DORMIR</span></p>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 55%; top: 82%;">
+            <div class="post-it pink">
+                <p>CAFÉ =<br>GASOLINA</p>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 68%; top: 32%;">
+            <div class="post-it green">
+                <p>MODO<br>DEBUG:<br>ON</p>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 12%; top: 82%;">
+            <div class="note-scribble yellow">
+                <p class="handwritten">Recuerda:<br>no pasa nada;<br>borra y hazlo de nuevo</p>
+            </div>
+        </div>
+
+        <!-- CHAPAS Y PASES -->
+
+        <div class="draggable-item" style="left: 75%; top: 5%;">
+            <div class="cyber-sticker">
+                <p>SIN CAFÉ NO HAY CODE</p>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 22%; top: 65%;">
+            <div class="backstage-pass neon">
+                <h5>HOY SE</h5>
+                <p>ROMPE TODO</p>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 58%; top: 48%;">
+            <div class="cyber-sticker blue">
+                <p>NO MOLESTAR — DEPURANDO</p>
+            </div>
+        </div>
+
+
+
+        <!-- LETRERO NEÓN -->
+        <div class="draggable-item" style="left: 60%; top: 6%;">
+            <div class="neon-sign">STRANGER THINGS... HAPPEN</div>
+        </div>
+
+        <!-- CALAVERAS Y SÍMBOLOS -->
+        <div class="draggable-item" style="left: 95%; top: 5%;">
+            <div class="skull-deco">💀</div>
+        </div>
+
+        <div class="draggable-item" style="left: 2%; top: 88%;">
+            <div class="skull-deco small">☠️</div>
+        </div>
+
+        <div class="draggable-item" style="left: 90%; top: 88%;">
+            <div class="symbol-deco">🎸</div>
+        </div>
+
+        <!-- (Cintas sueltas removidas) -->
+
+        <!-- GRAFFITI -->
+        <div class="draggable-item" style="left: 50%; top: 10%;">
+            <div class="graffiti">
+                <p>I MAKE<br>NOISE</p>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 88%; top: 58%;">
+            <div class="spray-tag">
+                <p>NO RULES</p>
+            </div>
+        </div>
+
+        
+
+        <!-- TICKETS Y PASES -->
+        <div class="draggable-item" style="left: 65%; top: 62%;">
+            <div class="torn-ticket">
+                <p>ADMIT<br>ONE</p>
+                <span class="ticket-number">#404</span>
+            </div>
+        </div>
+
+        <div class="draggable-item" style="left: 42%; top: 42%;">
+            <div class="backstage-pass">
+                <h5>ACCESS</h5>
+                <p>ALL AREAS</p>
+            </div>
+        </div>
+
+        <!-- SAFETY PINS -->
+        <div class="draggable-item" style="left: 45%; top: 85%;">
+            <div class="safety-pin"></div>
+        </div>
+
+        <div class="draggable-item" style="left: 28%; top: 28%;">
+            <div class="safety-pin small"></div>
+        </div>
+
+        <!-- Cursor personalizado -->
+        <div id="custom-cursor"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

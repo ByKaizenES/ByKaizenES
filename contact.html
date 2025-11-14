@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>// CONTACT //</title>
+    <link rel="stylesheet" href="page-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <a href="index.html" class="back-button">← BACK TO CHAOS</a>
+        
+        <div class="page-content">
+            <h1 class="page-title glitch" data-text="CONTACT">CONTACT</h1>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">⚠️</div>
+                    <h3>ASISTENCIA</h3>
+                    <p>Formulario y medios de contacto</p>
+                    <a href="https://bykaizenes.github.io/contacto/" target="_blank" rel="noopener" class="contact-link">Abrir asistencia →</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">✖️</div>
+                    <h3>X / TWITTER</h3>
+                    <p>@ByKaizenES</p>
+                    <a href="https://x.com/ByKaizenES" target="_blank" rel="noopener" class="contact-link">Seguir en X →</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📺</div>
+                    <h3>YOUTUBE</h3>
+                    <p>@ByKaizenES</p>
+                    <a href="https://youtube.com/@ByKaizenES" target="_blank" rel="noopener" class="contact-link">Ver canal →</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📷</div>
+                    <h3>INSTAGRAM</h3>
+                    <p>@ByKaizenES</p>
+                    <a href="https://instagram.com/ByKaizenES" target="_blank" rel="noopener" class="contact-link">Ver perfil →</a>
+                </div>
+            </div>
+
+            <div class="noise-line"></div>
+
+            <div class="contact-form-section">
+                <h2>// O DÉJAME UN MENSAJE //</h2>
+                
+                <form class="punk-form" id="contactForm" action="https://formsubmit.co/kaizenextensions@gmail.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">NOMBRE</label>
+                        <input type="text" id="name" name="name" required placeholder="Tu nombre...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">ASUNTO</label>
+                        <input type="text" id="subject" name="subject" required placeholder="¿De qué quieres hablar?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">MENSAJE</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        ENVIAR MENSAJE
+                    </button>
+                </form>
+
+                <div id="formMessage" class="form-message hidden"></div>
+            </div>
+
+            <div class="noise-line"></div>
+
+            <div class="availability-section">
+                <h3>DISPONIBILIDAD</h3>
+                <p class="status-badge available">● DISPONIBLE PARA PROYECTOS</p>
+                <p>Abierto a colaboraciones, freelance y oportunidades interesantes. Si tienes un proyecto rebelde en mente, hablemos.</p>
+            </div>
+        </div>
+
+        <div class="punk-decoration">✉</div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Form submission handled by FormSubmit service
+            const formMessage = document.getElementById('formMessage');
+            formMessage.classList.remove('hidden');
+            formMessage.style.background = '#00ff00';
+            formMessage.style.color = '#000';
+            formMessage.textContent = '✓ Enviando mensaje...';
+        });
+    </script>
+</body>
+</html>
